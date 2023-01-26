@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Averia+Libre&family=Bevan&family=Corben&family=Fira+Mono&family=Forum&family=Lily+Script+One&family=Mirza&family=Oleo+Script&family=Open+Sans&family=Oxanium&family=Poiret+One&family=Poller+One&family=Pompiere&family=Quicksand&family=Raleway:wght@300;400&family=Roboto:wght@300;400&family=Nanum+Myeongjo:wght@400;800&family=Rubik+Mono+One&display=swap");
+
+/* Font Selection
+
+Google Fonts
+// 'Averia Libre'
+// 'Bevan'
+// 'Corben'
+// 'Fira Mono'
+// 'Forum'
+// 'Lily Script One'
+// 'Mirza'
+// 'Oleo Script'
+// 'Open Sans'
+// 'Oxanium'
+// 'Poiret One'
+// 'Poller One'
+// 'Pompiere'
+// 'Quicksand'
+// 'Raleway'
+// 'Roboto'
+// 'Rubik Mono One'
+// 'Nanum Myeongjo'
+
+
+Installed Fonts
+// 'Distortion
+// 'MoneyGame'
+
+*/
+
+@font-face {
+  font-family: "MoneyGame";
+  src: url(/fonts/tff/MoneyGameRegular.ttf);
+}
+
+@font-face {
+  font-family: "Distortion";
+  src: url(/fonts/tff/DistortionDos.ttf);
+  font-weight: bold;
+}
+
+$korea-light-red: #f7a2a2;
+$korea-red: #dd2233;
+$korea-dark-red: #a61e2d;
+$korea-pink: #f7b2b2;
+$korea-dark-blue: #1e3a7a;
+$korea-blue: #2e5eb8;
+$korea-light-blue: #7da5da;
+$korea-yellow: #f7d600;
+$korea-green: #00a651;
+$korea-black: #000000;
+$korea-white: #ffffff;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style-type: none;
+  color: inherit;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  background: $korea-black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)),
+    url("/images/southkorea-night.jpg");
+  width: 100vw;
+  height: 50vh;
+  position: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  // border-bottOM: 2px solid black;
+}
+
+.hero-container {
+  width: clamp(300px, 100%, 1000px);
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+
+  .hero-text-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    width: 100%;
+
+    .hero-city-about-text {
+      font-family: "Averia Libre", cursive;
+      font-size: 1.25rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    .hero-city-flip {
+      text-transform: uppercase;
+      user-select: none;
+      letter-spacing: 1rem;
+      margin: 1rem;
+      position: relative;
+      z-index: 9;
+      width: 100%;
+      height: 12rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 8rem;
+      margin: 2rem;
+      height: 40vh;
+      #hero-city-english-name,
+      #hero-city-korean-name {
+        transition: opacity 400ms, scale 400ms, color 400ms;
+        text-align: center;
+      }
+      #hero-city-english-name {
+        position: absolute;
+        opacity: 1;
+        font-family: "Distortion";
+        color: $korea-light-blue;
+        z-index: 2;
+      }
+
+      #hero-city-korean-name {
+        position: absolute;
+        opacity: 1;
+        font-family: "Nanum Myeongjo";
+        font-weight: 800;
+        scale: 1.2;
+        color: $korea-dark-red;
+        z-index: 1;
+      }
+      &:hover {
+        #hero-city-english-name {
+          opacity: 1;
+          scale: 0.6;
+          z-index: 1;
+          color: $korea-light-blue;
+        }
+
+        #hero-city-korean-name {
+          opacity: 1;
+          scale: 1.4;
+          z-index: 2;
+          color: $korea-light-red;
+        }
+      }
+    }
+  }
+}
+
+.city-button {
+  user-select: none;
+  border: none;
+  background: $korea-dark-red;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  font-size: 1.25rem;
+  font-family: "Rubik Mono One";
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  &:hover, &:focus {
+    background-color: $korea-red;
+    color: $korea-white;
+  }
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: black;
+  z-index: 9;
+  font-family: "Rubik Mono One";
+  font-size: 1.125rem;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    li {
+      margin: 0.5rem 1rem;
+      a {
+        text-transform: uppercase;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          color: $korea-red;
+        }
+      }
+    }
+  }
+}
+
+.city-container{
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  padding: clamp(1rem, 5%, 5rem) clamp(1rem, 5%, 5rem);
+  .city-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .city-name{
+font-family: 'Raleway';
+text-transform: capitalize;
+.city-english-name{
+  color: red;
+}
+.city-korean-name{
+  color: blue;
+}
+    }
+    .city-img{
+      width: clamp(200px, 25vw, 600px);
+
+    }
+    .city-coordinates{
+
+    }
+    .city-desc{
+      font-family: 'Raleway';
+    }
+
+  }
+}
